@@ -450,7 +450,7 @@ module.exports = E;
 
             this.fakeHandler = document.body.addEventListener('click', function () {
                 return _this.removeFake();
-            });
+            }) || true;
 
             this.fakeElem = document.createElement('textarea');
             // Prevent zooming on iOS
@@ -469,7 +469,7 @@ module.exports = E;
 
             document.body.appendChild(this.fakeElem);
 
-            this.selectedText = (0, _select2.default)(this.fakeElem);
+            this.selectedText = (0, _select2['default'])(this.fakeElem);
             this.copyText();
         };
 
@@ -486,12 +486,12 @@ module.exports = E;
         };
 
         ClipboardAction.prototype.selectTarget = function selectTarget() {
-            this.selectedText = (0, _select2.default)(this.target);
+            this.selectedText = (0, _select2['default'])(this.target);
             this.copyText();
         };
 
         ClipboardAction.prototype.copyText = function copyText() {
-            var succeeded = undefined;
+            var succeeded = void 0;
 
             try {
                 succeeded = document.execCommand(this.action);
@@ -669,7 +669,7 @@ module.exports = E;
         Clipboard.prototype.listenClick = function listenClick(trigger) {
             var _this2 = this;
 
-            this.listener = (0, _goodListener2.default)(trigger, 'click', function (e) {
+            this.listener = (0, _goodListener2['default'])(trigger, 'click', function (e) {
                 return _this2.onClick(e);
             });
         };
@@ -681,7 +681,7 @@ module.exports = E;
                 this.clipboardAction = null;
             }
 
-            this.clipboardAction = new _clipboardAction2.default({
+            this.clipboardAction = new _clipboardAction2['default']({
                 action: this.action(trigger),
                 target: this.target(trigger),
                 text: this.text(trigger),
@@ -716,7 +716,7 @@ module.exports = E;
         };
 
         return Clipboard;
-    }(_tinyEmitter2.default);
+    }(_tinyEmitter2['default']);
 
     /**
      * Helper function to retrieve attribute value.
