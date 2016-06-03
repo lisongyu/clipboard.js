@@ -1,5 +1,5 @@
 /*!
- * clipboard.js v1.5.10
+ * clipboard.js v1.5.10.1
  * https://zenorocha.github.io/clipboard.js
  *
  * Licensed MIT © Zeno Rocha
@@ -369,7 +369,7 @@ module.exports = E;
 
     function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : {
-            default: obj
+            'default': obj
         };
     }
 
@@ -599,7 +599,7 @@ module.exports = E;
 
     function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : {
-            default: obj
+            'default': obj
         };
     }
 
